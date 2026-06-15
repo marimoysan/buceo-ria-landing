@@ -16,12 +16,24 @@
   <a class="nav-logo" href="#">
     <img src="assets/images/Logo_splash.webp" alt="Buceo Ría logo">
   </a>
-  <a class="nav-cta" href="#cta">¡Súmate a nosotros!</a>
+  <div class="nav-right">
+    <div class="lang-dropdown">
+      <button class="lang-current" aria-haspopup="listbox">
+        <span class="lang-current-label">ES</span>
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-options" role="listbox">
+        <li class="lang-option" data-lang="gl" role="option">Galego</li>
+        <li class="lang-option active" data-lang="es" role="option">Español</li>
+        <li class="lang-option" data-lang="en" role="option">English</li>
+      </ul>
+    </div>
+    <a class="nav-cta" href="#cta" data-i18n="nav.cta">¡Súmate a nosotros!</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <!-- Para añadir imagen de fondo: background-image: url('assets/images/hero-bg.jpg') en .hero-bg-img -->
   <div class="hero-bg-img"></div>
   <div class="hero-bg-pattern"></div>
   <div class="hero-bubbles">
@@ -30,93 +42,93 @@
     <div class="bubble"></div><div class="bubble"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag">Exploración · Ciencia · Comunidad</div>
-    <h1>Descubre un buceo <em>diferente</em> en la Ría de Vigo y las Islas Cíes</h1>
-    <p>Un centro en el que obtener tu curso PADI, descubrir la vida marina y hacer que tus inmersiones sirvan para proteger los océanos.</p>
+    <div class="hero-tag" data-i18n="hero.tag">Exploración · Ciencia · Comunidad</div>
+    <h1 data-i18n-html="hero.h1">Descubre un buceo <em>diferente</em> en la Ría de Vigo y las Islas Cíes</h1>
+    <p data-i18n="hero.p">Un centro en el que obtener tu curso PADI, descubrir la vida marina y hacer que tus inmersiones sirvan para proteger los océanos.</p>
     <div class="hero-btns">
-      <a href="#cta" class="btn-primary">¡Súmate a nosotros!</a>
-      <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-secondary">Síguenos en redes</a>
+      <a href="#cta" class="btn-primary" data-i18n="hero.btn1">¡Súmate a nosotros!</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-secondary" data-i18n="hero.btn2">Síguenos en redes</a>
     </div>
   </div>
 </section>
 
 <!-- ACTIVIDADES -->
 <section id="actividades">
-  <div class="section-label">Qué ofrecemos</div>
-  <div class="section-title">Un centro diferente para un buceo diferente</div>
-  <p class="section-intro">Fundamos Buceo Ría con el objetivo de crear el centro de buceo en el que nos gustaría bucear. Desde tu primera inmersión hasta convertirte en un buceador experimentado, el centro eres tú.</p>
+  <div class="section-label" data-i18n="act.label">Qué ofrecemos</div>
+  <div class="section-title" data-i18n="act.title">Un centro diferente para un buceo diferente</div>
+  <p class="section-intro" data-i18n="act.intro">Fundamos Buceo Ría con el objetivo de crear el centro de buceo en el que nos gustaría bucear. Desde tu primera inmersión hasta convertirte en un buceador experimentado, el centro eres tú.</p>
   <div class="actividades-grid">
     <div class="actividad-card">
       <div class="actividad-num">01</div>
-      <h3>Aprende buceando</h3>
-      <p>Un sistema de enseñanza en el que tú eres el protagonista. Formación PADI completa, desde Open Water hasta especialidades avanzadas, con instructores que se implican en tu progreso.</p>
-      <span class="tag">Formación PADI</span>
+      <h3 data-i18n="act.1.title">Aprende buceando</h3>
+      <p data-i18n="act.1.desc">Un sistema de enseñanza en el que tú eres el protagonista. Formación PADI completa, desde Open Water hasta especialidades avanzadas, con instructores que se implican en tu progreso.</p>
+      <span class="tag" data-i18n="act.1.tag">Formación PADI</span>
     </div>
     <div class="actividad-card">
       <div class="actividad-num">02</div>
-      <h3>Conoce la Ría</h3>
-      <p>Profesionales de la vida marina que darán una nueva dimensión a tus inmersiones. Aprende a identificar especies, comprender ecosistemas y leer el entorno submarino de la Ría de Vigo y las Cíes.</p>
-      <span class="tag">Biología marina</span>
+      <h3 data-i18n="act.2.title">Conoce la Ría</h3>
+      <p data-i18n="act.2.desc">Profesionales de la vida marina que darán una nueva dimensión a tus inmersiones. Aprende a identificar especies, comprender ecosistemas y leer el entorno submarino de la Ría de Vigo y las Cíes.</p>
+      <span class="tag" data-i18n="act.2.tag">Biología marina</span>
     </div>
     <div class="actividad-card">
       <div class="actividad-num">03</div>
-      <h3>Protege los océanos</h3>
-      <p>Actividades de divulgación y ciencia ciudadana para que cada burbuja sea relevante. Participa en recogidas de datos, limpieza de fondos y proyectos de monitoreo de biodiversidad.</p>
-      <span class="tag">Ciencia ciudadana</span>
+      <h3 data-i18n="act.3.title">Protege los océanos</h3>
+      <p data-i18n="act.3.desc">Actividades de divulgación y ciencia ciudadana para que cada burbuja sea relevante. Participa en recogidas de datos, limpieza de fondos y proyectos de monitoreo de biodiversidad.</p>
+      <span class="tag" data-i18n="act.3.tag">Ciencia ciudadana</span>
     </div>
     <div class="actividad-card">
       <div class="actividad-num">04</div>
-      <h3>Sé parte de algo más</h3>
-      <p>Una comunidad para los amantes del mar en la que aprender juntos. Salidas grupales, encuentros formativos y una red de buceadores que comparte los mismos valores.</p>
-      <span class="tag">Comunidad</span>
+      <h3 data-i18n="act.4.title">Sé parte de algo más</h3>
+      <p data-i18n="act.4.desc">Una comunidad para los amantes del mar en la que aprender juntos. Salidas grupales, encuentros formativos y una red de buceadores que comparte los mismos valores.</p>
+      <span class="tag" data-i18n="act.4.tag">Comunidad</span>
     </div>
   </div>
 </section>
 
 <!-- VALORES -->
 <section id="valores">
-  <div class="section-label">Nuestra filosofía</div>
-  <div class="section-title">Por qué hacemos lo que hacemos</div>
-  <p class="section-intro">Tres principios que guían cada inmersión, cada curso y cada actividad en Buceo Ría.</p>
+  <div class="section-label" data-i18n="val.label">Nuestra filosofía</div>
+  <div class="section-title" data-i18n="val.title">Por qué hacemos lo que hacemos</div>
+  <p class="section-intro" data-i18n="val.intro">Tres principios que guían cada inmersión, cada curso y cada actividad en Buceo Ría.</p>
   <div class="valores-grid">
     <div class="valor-card">
       <div class="valor-icon">🎓</div>
-      <h3>Formación de calidad</h3>
-      <p>Los buceadores bien formados tienen más probabilidades de seguir buceando y hacerlo de modo seguro y consciente. Invertir en educación es invertir en el futuro del océano.</p>
+      <h3 data-i18n="val.1.title">Formación de calidad</h3>
+      <p data-i18n="val.1.desc">Los buceadores bien formados tienen más probabilidades de seguir buceando y hacerlo de modo seguro y consciente. Invertir en educación es invertir en el futuro del océano.</p>
     </div>
     <div class="valor-card">
       <div class="valor-icon">🔬</div>
-      <h3>Ciencia y divulgación</h3>
-      <p>Involucrando a los buceadores con el entorno y brindándoles formación sobre la vida marina, ayudamos a proteger los océanos. El conocimiento transforma la experiencia y la conciencia.</p>
+      <h3 data-i18n="val.2.title">Ciencia y divulgación</h3>
+      <p data-i18n="val.2.desc">Involucrando a los buceadores con el entorno y brindándoles formación sobre la vida marina, ayudamos a proteger los océanos. El conocimiento transforma la experiencia y la conciencia.</p>
     </div>
     <div class="valor-card">
       <div class="valor-icon">🌊</div>
-      <h3>Buceo responsable</h3>
-      <p>Un enfoque claro hacia la sostenibilidad, la reducción de nuestro impacto y la remediación ambiental. Porque cada inmersión debería dejar el fondo mejor de como lo encontramos.</p>
+      <h3 data-i18n="val.3.title">Buceo responsable</h3>
+      <p data-i18n="val.3.desc">Un enfoque claro hacia la sostenibilidad, la reducción de nuestro impacto y la remediación ambiental. Porque cada inmersión debería dejar el fondo mejor de como lo encontramos.</p>
     </div>
   </div>
 </section>
 
 <!-- EQUIPO -->
 <section id="equipo">
-  <div class="section-label">El equipo</div>
-  <div class="section-title">Las personas detrás del proyecto</div>
-  <p class="section-intro">Personas apasionadas por el mar que combinan experiencia técnica en buceo con conocimiento profundo del ecosistema marino gallego.</p>
+  <div class="section-label" data-i18n="team.label">El equipo</div>
+  <div class="section-title" data-i18n="team.title">Las personas detrás del proyecto</div>
+  <p class="section-intro" data-i18n="team.intro">Personas apasionadas por el mar que combinan experiencia técnica en buceo con conocimiento profundo del ecosistema marino gallego.</p>
   <div class="equipo-grid">
     <div class="equipo-card">
       <div class="equipo-avatar">PP</div>
       <div class="equipo-info">
         <h3>Pablo Pereira</h3>
-        <div class="equipo-role">Fundador &amp; Instructor PADI</div>
-        <p>Buceador con más de 500 inmersiones en la Ría de Vigo y las Cíes. Apasionado por la biología marina y la divulgación científica, cofundó Buceo Ría con la misión de cambiar la forma en que experimentamos el mar.</p>
+        <div class="equipo-role" data-i18n="team.pablo.role">Fundador &amp; Instructor PADI</div>
+        <p data-i18n="team.pablo.desc">Buceador con más de 500 inmersiones en la Ría de Vigo y las Cíes. Apasionado por la biología marina y la divulgación científica, cofundó Buceo Ría con la misión de cambiar la forma en que experimentamos el mar.</p>
       </div>
     </div>
     <div class="equipo-card">
       <div class="equipo-avatar">?</div>
       <div class="equipo-info">
-        <h3>Por determinar</h3>
-        <div class="equipo-role">Co-fundador · Próximamente</div>
-        <p>Estamos ultimando los detalles del equipo. Pronto podrás conocer al resto de personas que hacen posible este proyecto. ¡Permanece atento!</p>
+        <h3 data-i18n="team.tbd.name">Por determinar</h3>
+        <div class="equipo-role" data-i18n="team.tbd.role">Co-fundador · Próximamente</div>
+        <p data-i18n="team.tbd.desc">Estamos ultimando los detalles del equipo. Pronto podrás conocer al resto de personas que hacen posible este proyecto. ¡Permanece atento!</p>
       </div>
     </div>
   </div>
@@ -125,36 +137,31 @@
 <!-- CTA / FORMULARIO -->
 <section id="cta">
   <div class="cta-inner">
-    <div class="section-label">Únete a la lista de espera</div>
-    <div class="section-title">Sé de los primeros en bucear con nosotros</div>
-    <p class="section-intro">Déjanos tus datos y te avisaremos en cuanto abramos. Sin spam, solo lo que importa.</p>
+    <div class="section-label" data-i18n="cta.label">Únete a la lista de espera</div>
+    <div class="section-title" data-i18n="cta.title">Sé de los primeros en bucear con nosotros</div>
+    <p class="section-intro" data-i18n="cta.intro">Déjanos tus datos y te avisaremos en cuanto abramos. Sin spam, solo lo que importa.</p>
 
     <div class="form-group">
-      <input type="text" placeholder="Tu nombre" autocomplete="name">
+      <input type="text" data-i18n-placeholder="form.name" placeholder="Tu nombre" autocomplete="name">
     </div>
     <div class="form-group">
-      <input type="email" placeholder="Tu email" autocomplete="email">
+      <input type="email" data-i18n-placeholder="form.email" placeholder="Tu email" autocomplete="email">
     </div>
     <div class="form-group">
-      <textarea placeholder="¿Qué te interesa más? (Formación PADI, salidas en la Ría, ciencia ciudadana…)"></textarea>
+      <textarea data-i18n-placeholder="form.message" placeholder="¿Qué te interesa más? (Formación PADI, salidas en la Ría, ciencia ciudadana…)"></textarea>
     </div>
 
     <div class="newsletter-box">
       <label class="checkbox-label">
         <input type="checkbox" id="newsletter-check">
-        <span>Sí, quiero suscribirme a la newsletter de Buceo Ría</span>
+        <span data-i18n="newsletter.check">Sí, quiero suscribirme a la newsletter de Buceo Ría</span>
       </label>
-      <p class="newsletter-note">
-        Enviamos un correo una vez al mes o cada dos meses con contenido exclusivamente divulgativo: novedades sobre la vida marina de la Ría, artículos de interés y noticias del proyecto. Sin contenido promocional. Puedes darte de baja en cualquier momento con un solo clic.<br><br>
-        <strong>Si prefieres no suscribirte</strong>, solo te contactaremos cuando el centro abra para que vengas a bucear.
-      </p>
+      <p class="newsletter-note" data-i18n-html="newsletter.note">Enviamos un correo una vez al mes o cada dos meses con contenido exclusivamente divulgativo: novedades sobre la vida marina de la Ría, artículos de interés y noticias del proyecto. Sin contenido promocional. Puedes darte de baja en cualquier momento con un solo clic.<br><br><strong>Si prefieres no suscribirte</strong>, solo te contactaremos cuando el centro abra para que vengas a bucear.</p>
     </div>
 
-    <button class="btn-submit" type="button">Quiero unirme al proyecto</button>
+    <button class="btn-submit" type="button" data-i18n="btn.submit">Quiero unirme al proyecto</button>
 
-    <p class="lopd-text">
-      En cumplimiento del <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, te informamos de que los datos facilitados serán tratados por <em>Buceo Ría de Vigo</em> con la finalidad de gestionar tu solicitud de incorporación a la lista de espera y, si lo consientes, el envío de la newsletter. No cederemos tus datos a terceros. Tienes derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:hola@buceoriavigo.com">hola@buceoriavigo.com</a>. Para más información consulta nuestro <a href="#aviso-legal">Aviso Legal y Política de Privacidad</a>.
-    </p>
+    <p class="lopd-text" data-i18n-html="lopd">En cumplimiento del <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, te informamos de que los datos facilitados serán tratados por <em>Buceo Ría de Vigo</em> con la finalidad de gestionar tu solicitud de incorporación a la lista de espera y, si lo consientes, el envío de la newsletter. No cederemos tus datos a terceros. Tienes derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:hola@buceoriavigo.com">hola@buceoriavigo.com</a>. Para más información consulta nuestro <a href="#aviso-legal">Aviso Legal y Política de Privacidad</a>.</p>
   </div>
 </section>
 
@@ -178,13 +185,12 @@
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
       </a>
     </div>
-    <a href="#aviso-legal" class="footer-link">Aviso legal</a>
+    <a href="aviso-legal.html" class="footer-link" data-i18n="footer.legal">Aviso legal</a>
     <a href="mailto:hola@buceoriavigo.com" class="footer-link">hola@buceoriavigo.com</a>
   </div>
 </footer>
 
-<div id="aviso-legal" style="display:none"></div>
-
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

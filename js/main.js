@@ -1,5 +1,10 @@
 const WEBHOOK_URL = 'REEMPLAZA_CON_TU_URL_DE_MAKE';
 
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+}, { passive: true });
+
 const form = {
   nombre:     document.querySelector('input[autocomplete="name"]'),
   email:      document.querySelector('input[autocomplete="email"]'),
@@ -14,11 +19,11 @@ form.btn.addEventListener('click', async () => {
   const mensaje = form.mensaje.value.trim();
 
   if (!nombre || !email) {
-    showFeedback('Por favor rellena tu nombre y email.', 'error');
+    showFeedback(t('form.validation'), 'error');
     return;
   }
   if (!isValidEmail(email)) {
-    showFeedback('El email no tiene un formato válido.', 'error');
+    showFeedback(t('form.email_invalid'), 'error');
     return;
   }
 
@@ -36,10 +41,10 @@ form.btn.addEventListener('click', async () => {
       }),
     });
 
-    showFeedback('¡Apuntado! Te avisaremos cuando abramos. 🌊', 'success');
+    showFeedback(t('form.success'), 'success');
     resetForm();
   } catch {
-    showFeedback('Algo salió mal. Inténtalo de nuevo o escríbenos a hola@buceoriavigo.com', 'error');
+    showFeedback(t('form.error'), 'error');
   } finally {
     setLoading(false);
   }
