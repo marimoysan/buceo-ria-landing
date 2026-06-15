@@ -949,9 +949,12 @@ footer {
     padding: 1rem 1.5rem;
   }
 
-  .nav-logo img,
+  .nav-logo img {
+    height: 80px;
+  }
+
   .nav--scrolled .nav-logo img {
-    height: 60px;
+    height: 55px;
   }
 
   nav .lang-dropdown {
