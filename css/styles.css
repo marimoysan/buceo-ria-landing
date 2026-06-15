@@ -148,11 +148,18 @@ nav {
   background: rgba(13, 27, 42, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+}
+
+.nav--scrolled .nav-logo img {
+  height: 60px;
 }
 
 .nav-logo img {
   height: 120px;
+  transition: height 0.3s ease;
 }
 
 .nav-cta {
@@ -940,6 +947,11 @@ footer {
 
   nav {
     padding: 1rem 1.5rem;
+  }
+
+  .nav-logo img,
+  .nav--scrolled .nav-logo img {
+    height: 60px;
   }
 
   nav .lang-dropdown {
