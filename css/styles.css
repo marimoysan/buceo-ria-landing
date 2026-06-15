@@ -957,8 +957,9 @@ footer {
     height: 55px;
   }
 
-  nav .lang-dropdown {
-    display: none;
+  nav .lang-current {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
   }
 
   .hero-content {
