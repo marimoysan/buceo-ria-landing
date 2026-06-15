@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /aviso-legal.html
+
+Sitemap: https://www.buceoriavigo.com/sitemap.xml
