@@ -35,11 +35,20 @@ Language choice persists via `localStorage['lang']` and defaults to `es`. `aviso
 
 **When adding or changing copy**: update the string in all three locales inside `translations` in `js/i18n.js`, and keep the hardcoded Spanish fallback text in `index.html`'s markup in sync (it's what renders before JS runs / if JS fails).
 
-`texto_landing_es.json` at the repo root is an untracked, unreferenced export of the `es` strings only — nothing in the code reads it, and it has been allowed to drift out of sync with `js/i18n.js` (also contains a pre-existing invalid-JSON syntax error in the `lopd` string, left unfixed since the file is dead). Treat `js/i18n.js` as the single source of truth for copy; don't add a fetch of this JSON without removing the duplication it would create.
+`texto_landing_es.json` at the repo root is a tracked-but-unreferenced export of the `es` strings only — nothing in the code reads it, and it has been allowed to drift out of sync with `js/i18n.js` (also contains a pre-existing invalid-JSON syntax error in the `lopd` string, left unfixed since the file is dead). Treat `js/i18n.js` as the single source of truth for copy; don't add a fetch of this JSON without removing the duplication it would create. It's excluded from the Vercel deployment via `.vercelignore` (see Deployment/security below) but stays in the git repo since the user asked to leave it as-is.
 
 ## Form submission
 
 The waitlist form in `js/main.js` POSTs JSON (`nombre`, `email`, `mensaje`, `newsletter`) to `WEBHOOK_URL`, a Make.com (Integromat) webhook. The placeholder value `'REEMPLAZA_CON_TU_URL_DE_MAKE'` must be replaced with the real webhook URL before the form works in production — check this is set before treating form-related work as done.
+
+**When the real webhook URL is set**, also update the `connect-src` directive in `vercel.json`'s CSP (currently `'self' https://*.make.com'`) if the webhook doesn't live on a `*.make.com` host — otherwise the browser will silently block the `fetch()` call and the form will look broken with no console-visible cause beyond a CSP violation.
+
+## Deployment & security headers
+
+Deployed on Vercel (`https://buceo-ria-landing.vercel.app`, tracks the `main` branch) as a plain static site — no build step, so every file tracked in git is served as-is unless excluded.
+
+- `.vercelignore` excludes `CLAUDE.md` and `texto_landing_es.json` from the deployment — both are dev-only files that were previously publicly served (confirmed via direct `curl` to the live URL) and leaked internal maintenance notes. Add any other internal-only file here rather than relying on it just being "unreferenced."
+- `vercel.json` sets response headers on every route: `X-Frame-Options: DENY` and a CSP `frame-ancestors 'none'` (clickjacking protection — the site has a data-collecting form and previously had no framing protection at all), `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy` (locks down camera/mic/geolocation, unused by the site), and a `Content-Security-Policy` scoped to what the site actually loads (`self` scripts/styles, Google Fonts, and `*.make.com` for the waitlist webhook). If you add a new external resource (another CDN, an analytics/GA snippet, an embed), it needs a matching CSP allowance in `vercel.json` or it will be silently blocked in production while working fine locally (there's no CSP enforcement when opening `index.html` directly or via a plain static server).
 
 ## Layout width
 
