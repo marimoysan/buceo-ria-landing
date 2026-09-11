@@ -34,7 +34,7 @@ Language choice persists via `localStorage['lang']` and defaults to `es`. `aviso
 
 **When adding or changing copy**: update the string in all three locales inside `translations` in `js/i18n.js`, and keep the hardcoded Spanish fallback text in `index.html`'s markup in sync (it's what renders before JS runs / if JS fails).
 
-`texto_landing_es.json` at the repo root is an untracked, unreferenced export of the `es` strings only — nothing in the code reads it. Treat `js/i18n.js` as the single source of truth for copy; don't add a fetch of this JSON without removing the duplication it would create.
+`texto_landing_es.json` at the repo root is an untracked, unreferenced export of the `es` strings only — nothing in the code reads it, and it has been allowed to drift out of sync with `js/i18n.js` (also contains a pre-existing invalid-JSON syntax error in the `lopd` string, left unfixed since the file is dead). Treat `js/i18n.js` as the single source of truth for copy; don't add a fetch of this JSON without removing the duplication it would create.
 
 ## Form submission
 
@@ -44,3 +44,4 @@ The waitlist form in `js/main.js` POSTs JSON (`nombre`, `email`, `mensaje`, `new
 
 - The hero tag (`.hero-tag`, `data-i18n="hero.tag"`) is intentionally hidden via inline `style="visibility: hidden;"` — there's an HTML comment noting it's temporarily disabled and how to re-enable it (remove that inline style).
 - Social links (Instagram/Facebook/YouTube) in the hero and footer are currently placeholder URLs (`https://instagram.com`, etc.), not the center's real profiles.
+- The nav logo (`.nav-logo img`, `assets/images/Logo_splash.webp`) has a transparent-background PNG-style silhouette (an irregular paint-stroke shape), not a rectangle. Its white outline is done with a stack of 8 `drop-shadow()` filters (not `border`/`background`) so the outline follows the actual silhouette instead of boxing the image.
