@@ -154,12 +154,21 @@ nav {
 }
 
 .nav--scrolled .nav-logo img {
-  height: 60px;
+  height: 110px;
 }
 
 .nav-logo img {
-  height: 120px;
+  height: 180px;
   transition: height 0.3s ease;
+  filter:
+    drop-shadow(1px 0 0 #fff)
+    drop-shadow(-1px 0 0 #fff)
+    drop-shadow(0 1px 0 #fff)
+    drop-shadow(0 -1px 0 #fff)
+    drop-shadow(0.7px 0.7px 0 #fff)
+    drop-shadow(-0.7px 0.7px 0 #fff)
+    drop-shadow(0.7px -0.7px 0 #fff)
+    drop-shadow(-0.7px -0.7px 0 #fff);
 }
 
 .nav-cta {
@@ -962,11 +971,11 @@ footer {
   }
 
   .nav-logo img {
-    height: 80px;
+    height: 115px;
   }
 
   .nav--scrolled .nav-logo img {
-    height: 55px;
+    height: 90px;
   }
 
   nav .lang-current {
