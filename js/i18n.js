@@ -34,8 +34,8 @@ const translations = {
     'val.3.title': 'Buceo responsable',
     'val.3.desc': 'Un enfoque claro hacia la sostenibilidad, la reducción de nuestro impacto y la remediación ambiental. Porque cada inmersión debería dejar el mar mejor de como lo encontramos.',
 
-    'team.label': 'El equipo',
-    'team.title': '¿Quiénes somos?',
+    'team.label': '¿Quiénes somos?',
+    'team.title': 'Las personas detrás del proyecto',
     'team.intro': 'Un equipo apasionado por el mar en el que se combinan la experiencia de buceo con el conocimiento científico de los ecosistemas marinos de Galicia.',
     'team.pablo.role': 'Coordinador General',
     'team.pablo.desc': 'Biólogo Marino, Guía Oficial del Parque Nacional de las Islas Atlánticas de Galicia y PADI Master Scuba Diver Trainer con más de 15 años de experiencia bajo el mar. Apasionado por el buceo en las Rías Baixas y la divulgación ambiental, cofundó Buceo Ría con el objetivo de cambiar el modo en que los buceadores nos acercamos al océano.',
@@ -96,8 +96,8 @@ const translations = {
     'val.3.title': 'Mergullo responsable',
     'val.3.desc': 'Un enfoque claro cara á sustentabilidade, a redución do noso impacto e a remediación ambiental. Porque cada inmersión debería deixar o mar mellor de como o atopamos.',
 
-    'team.label': 'O equipo',
-    'team.title': 'Quen somos?',
+    'team.label': 'Quen somos?',
+    'team.title': 'As persoas detrás do proxecto',
     'team.intro': 'Un equipo apaixonado polo mar no que se combina a experiencia en mergullo co coñecemento científico dos ecosistemas mariños de Galicia.',
     'team.pablo.role': 'Coordinador Xeral',
     'team.pablo.desc': 'Biólogo Mariño, Guía Oficial do Parque Nacional das Illas Atlánticas de Galicia e PADI Master Scuba Diver Trainer con máis de 15 anos de experiencia baixo o mar. Apaixonado polo mergullo nas Rías Baixas e a divulgación ambiental, cofundou Buceo Ría co obxectivo de cambiar o xeito en que os mergulladores nos achegamos ao océano.',
@@ -158,8 +158,8 @@ const translations = {
     'val.3.title': 'Responsible diving',
     'val.3.desc': 'A clear commitment to sustainability, reducing our impact and environmental restoration. Because every dive should leave the sea better than we found it.',
 
-    'team.label': 'The team',
-    'team.title': 'Who are we?',
+    'team.label': 'Who are we?',
+    'team.title': 'The people behind the project',
     'team.intro': 'A team passionate about the sea, combining diving experience with scientific knowledge of the marine ecosystems of Galicia.',
     'team.pablo.role': 'General Coordinator',
     'team.pablo.desc': 'Marine Biologist, Official Guide of the Atlantic Islands of Galicia National Park and PADI Master Scuba Diver Trainer with over 15 years of experience under the sea. Passionate about diving in the Rías Baixas and environmental outreach, he co-founded Buceo Ría with the goal of changing the way divers approach the ocean.',
