@@ -14,7 +14,7 @@ There is no linter, formatter, or test suite configured.
 
 ## Structure
 
-- `index.html` — the single-page landing (nav, hero, actividades, valores, equipo, CTA form, footer).
+- `index.html` — the single-page landing (nav, hero, actividades, certificados, valores, equipo, CTA form, footer).
 - `aviso-legal.html` — standalone legal/privacy notice page, `noindex`. Shares `css/styles.css` and the same nav/footer markup as `index.html` (kept in sync manually, not templated).
 - `css/styles.css` — one stylesheet for both pages, organized in commented sections (`/* ─── NAV ─── */`, `/* ─── HERO ─── */`, etc.) that map 1:1 to the sections in the HTML.
 - `js/i18n.js` — translation dictionary (`es`/`gl`/`en`) and the `applyLang()` engine; also owns the language-dropdown UI (nav + footer).
@@ -39,6 +39,10 @@ Language choice persists via `localStorage['lang']` and defaults to `es`. `aviso
 ## Form submission
 
 The waitlist form in `js/main.js` POSTs JSON (`nombre`, `email`, `mensaje`, `newsletter`) to `WEBHOOK_URL`, a Make.com (Integromat) webhook. The placeholder value `'REEMPLAZA_CON_TU_URL_DE_MAKE'` must be replaced with the real webhook URL before the form works in production — check this is set before treating form-related work as done.
+
+## Layout width
+
+Every `<section>` except `#hero` owns full-bleed background color/padding, but its actual content (label/title/intro/grid) is wrapped in a `.section-inner` div (`max-width: 1200px; margin: 0 auto;`, defined in the "SECTIONS COMMON" CSS block) so content doesn't stretch edge-to-edge on wide viewports. `#cta` uses its own pre-existing `.cta-inner` (max-width 600px, centered, text-centered) instead — don't wrap it in `.section-inner` too. `#hero` is intentionally full-bleed (its background layers are `position: absolute; inset: 0` on the section itself) and constrains only `.hero-content` (780px). When adding a new section, follow the same pattern: full-width `<section>` + a `.section-inner` (or purpose-built inner div) wrapping its actual content.
 
 ## Editorial/config notes visible in the markup
 
