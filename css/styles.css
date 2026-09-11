@@ -546,6 +546,8 @@ section {
 #certificados {
   background: var(--white);
   padding: 3.5rem 0;
+  border-top: 1px solid rgba(13, 27, 42, 0.08);
+  border-bottom: 1px solid rgba(13, 27, 42, 0.08);
 }
 
 .certs-carousel {
