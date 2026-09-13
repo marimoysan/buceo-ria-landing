@@ -15,13 +15,26 @@ There is no linter, formatter, or test suite configured.
 ## Structure
 
 - `index.html` — the single-page landing (nav, hero, actividades, certificados, valores, equipo, CTA form, footer).
-- `aviso-legal.html` — standalone legal/privacy notice page, `noindex`. Shares `css/styles.css` and the same nav/footer markup as `index.html` (kept in sync manually, not templated).
+- `aviso-legal.html` — standalone legal/privacy notice page, `noindex`. Shares `css/styles.css`, `js/i18n.js`, `js/nav.js`, and the same nav/footer markup as `index.html` (the markup itself is kept in sync manually, not templated — see "Nav/footer parity" below).
 - `css/styles.css` — one stylesheet for both pages, organized in commented sections (`/* ─── NAV ─── */`, `/* ─── HERO ─── */`, etc.) that map 1:1 to the sections in the HTML.
 - `js/i18n.js` — translation dictionary (`es`/`gl`/`en`) and the `applyLang()` engine; also owns the language-dropdown UI (nav + footer).
-- `js/main.js` — waitlist form handling (validation, submit, feedback messages) and the nav scroll-shadow effect.
+- `js/nav.js` — the nav scroll-shadow effect (`.nav--scrolled` toggle on `window.scroll`). Shared by both pages. Kept separate from `main.js` specifically so `aviso-legal.html` can use it without pulling in the waitlist-form code (which assumes form elements that only exist on `index.html` and would throw if loaded where they don't exist).
+- `js/main.js` — waitlist form handling only (validation, submit, feedback messages). Loaded by `index.html` only.
+- `js/hero-test.js` + the `.hero-test-nav` block at the top of `index.html`'s `<body>` — **temporary** A/B-test harness for picking the hero background (see "Hero image A/B test" below). Not present on `aviso-legal.html`.
 - `assets/images/` — logo and photos.
+- `assets/images/hero_image.jpg`, `hero_image2.jpg`, `hero_image3.jpg`, `hero_video.mp4` — the four hero background candidates used by the A/B test harness.
+- `assets/images/og-image.jpg` — the Open Graph / Twitter Card share image (1200×630), generated from a crop of `hero_image2.jpg`. Regenerate at 1200×630 and re-optimize (`quality≈80`, keep well under 1MB) if the source photo changes.
+- `favicon.ico` (repo root) + `assets/images/favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` — generated from `Logo_splash.webp` (cropped tight to the non-transparent splash shape). At 16×16 the logo reads as little more than a pink blob since it has no simplified icon-only mark — a proper single-glyph icon would favicon better if one is ever produced.
 - `assets/images/logos/` — certifying-body / partner logos shown in the `#certificados` carousel (PADI, Observadores del Mar, PEJCONA, REEDUCAMAR, Alen Formación, Turislab, etc.). Filenames contain spaces and are referenced with `%20` escapes in `index.html`.
 - `robots.txt`, `sitemap.xml` — reference `https://www.buceoriavigo.com`.
+
+## Nav/footer parity between pages
+
+`aviso-legal.html`'s nav and footer are hand-copied from `index.html`, not templated — every nav/footer change made on one page must be manually re-applied to the other or they drift (this has already happened once: the CTA button text and the nav scroll-shadow behavior both went stale on `aviso-legal.html`). The two intentional, permanent differences are: the nav logo links to `index.html` (not `#`) and the nav CTA points to `index.html#cta` (not `#cta`). Everything else — including `data-i18n` attributes on the CTA/footer links — should match `index.html` exactly.
+
+## Hero image A/B test (temporary)
+
+`index.html` currently has a floating pill nav (`.hero-test-nav`, buttons 1–4) wired up by `js/hero-test.js` to swap `#hero`'s background live: 1/2/3 swap `.hero-bg-img`'s `background-image` between `hero_image.jpg` / `hero_image2.jpg` / `hero_image3.jpg`; 4 shows a looping muted `<video>` of `hero_video.mp4` instead. This is a temporary decision-making tool, not a feature — once a final hero background is chosen, remove the `.hero-test-nav` block from `index.html`, delete `js/hero-test.js` and its `<script>` tag, remove the `.hero-test-nav`/`.hero-bg-video` CSS rules, and hardcode the winning image (or swap `.hero-bg-img` for a `<video>`, if the video wins) directly.
 
 ## i18n architecture
 
@@ -46,6 +59,8 @@ The waitlist form in `js/main.js` POSTs JSON (`nombre`, `email`, `mensaje`, `new
 ## Deployment & security headers
 
 Deployed on Vercel (`https://buceo-ria-landing.vercel.app`, tracks the `main` branch) as a plain static site — no build step, so every file tracked in git is served as-is unless excluded.
+
+**`www.buceoriavigo.com` is not yet connected to this Vercel deployment** (checked 2026-09-13): the domain currently serves an old WordPress "under construction" placeholder (lighthouse theme, "Muy pronto disponible"), unrelated to this repo. Until DNS/domain is pointed at Vercel, testing must use the `buceo-ria-landing.vercel.app` URL directly — anything that hardcodes the `www.buceoriavigo.com` absolute URL (canonical link, `og:url`, sitemap) will not resolve to this site in the meantime. `og:image`/`twitter:image` in `index.html` are temporarily pointed at the `vercel.app` absolute URL instead (marked `TEMPORAL` in an HTML comment right above each) specifically so link-preview crawlers can find the share image while testing with the vercel.app URL — switch both back to `https://www.buceoriavigo.com/assets/images/og-image.jpg` once the custom domain is live.
 
 - `.vercelignore` excludes `CLAUDE.md` and `texto_landing_es.json` from the deployment — both are dev-only files that were previously publicly served (confirmed via direct `curl` to the live URL) and leaked internal maintenance notes. Add any other internal-only file here rather than relying on it just being "unreferenced."
 - `vercel.json` sets response headers on every route: `X-Frame-Options: DENY` and a CSP `frame-ancestors 'none'` (clickjacking protection — the site has a data-collecting form and previously had no framing protection at all), `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy` (locks down camera/mic/geolocation, unused by the site), and a `Content-Security-Policy` scoped to what the site actually loads (`self` scripts/styles, Google Fonts, and `*.make.com` for the waitlist webhook). If you add a new external resource (another CDN, an analytics/GA snippet, an embed), it needs a matching CSP allowance in `vercel.json` or it will be silently blocked in production while working fine locally (there's no CSP enforcement when opening `index.html` directly or via a plain static server).

@@ -1,10 +1,5 @@
 const WEBHOOK_URL = 'REEMPLAZA_CON_TU_URL_DE_MAKE';
 
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-}, { passive: true });
-
 const form = {
   nombre:     document.querySelector('input[autocomplete="name"]'),
   email:      document.querySelector('input[autocomplete="email"]'),
