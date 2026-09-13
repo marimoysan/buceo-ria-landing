@@ -20,10 +20,9 @@ There is no linter, formatter, or test suite configured.
 - `js/i18n.js` — translation dictionary (`es`/`gl`/`en`) and the `applyLang()` engine; also owns the language-dropdown UI (nav + footer).
 - `js/nav.js` — the nav scroll-shadow effect (`.nav--scrolled` toggle on `window.scroll`). Shared by both pages. Kept separate from `main.js` specifically so `aviso-legal.html` can use it without pulling in the waitlist-form code (which assumes form elements that only exist on `index.html` and would throw if loaded where they don't exist).
 - `js/main.js` — waitlist form handling only (validation, submit, feedback messages). Loaded by `index.html` only.
-- `js/hero-test.js` + the `.hero-test-nav` block at the top of `index.html`'s `<body>` — **temporary** A/B-test harness for picking the hero background (see "Hero image A/B test" below). Not present on `aviso-legal.html`.
 - `assets/images/` — logo and photos.
-- `assets/images/hero_image.jpg`, `hero_image2.jpg`, `hero_image3.jpg`, `hero_video.mp4` — the four hero background candidates used by the A/B test harness.
-- `assets/images/og-image.jpg` — the Open Graph / Twitter Card share image (1200×630), generated from a crop of `hero_image2.jpg`. Regenerate at 1200×630 and re-optimize (`quality≈80`, keep well under 1MB) if the source photo changes.
+- `assets/images/hero_image.jpg` — the `#hero` background (`.hero-bg-img`). Decided after an A/B test comparing 4 candidates; the runner-up stock photo is kept as `hero_image_old.jpg` (unused, not referenced anywhere) rather than deleted.
+- `assets/images/og-image.jpg` — the Open Graph / Twitter Card share image (1200×630), cropped from `hero_image.jpg`. Regenerate at 1200×630 and re-optimize (`quality≈80`, keep well under 1MB) if the source photo changes.
 - `favicon.ico` (repo root) + `assets/images/favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` — generated from `Logo_splash.webp` (cropped tight to the non-transparent splash shape). At 16×16 the logo reads as little more than a pink blob since it has no simplified icon-only mark — a proper single-glyph icon would favicon better if one is ever produced.
 - `assets/images/logos/` — certifying-body / partner logos shown in the `#certificados` carousel (PADI, Observadores del Mar, PEJCONA, REEDUCAMAR, Alen Formación, Turislab, etc.). Filenames contain spaces and are referenced with `%20` escapes in `index.html`.
 - `robots.txt`, `sitemap.xml` — reference `https://www.buceoriavigo.com`.
@@ -31,10 +30,6 @@ There is no linter, formatter, or test suite configured.
 ## Nav/footer parity between pages
 
 `aviso-legal.html`'s nav and footer are hand-copied from `index.html`, not templated — every nav/footer change made on one page must be manually re-applied to the other or they drift (this has already happened once: the CTA button text and the nav scroll-shadow behavior both went stale on `aviso-legal.html`). The two intentional, permanent differences are: the nav logo links to `index.html` (not `#`) and the nav CTA points to `index.html#cta` (not `#cta`). Everything else — including `data-i18n` attributes on the CTA/footer links — should match `index.html` exactly.
-
-## Hero image A/B test (temporary)
-
-`index.html` currently has a floating pill nav (`.hero-test-nav`, buttons 1–4) wired up by `js/hero-test.js` to swap `#hero`'s background live: 1/2/3 swap `.hero-bg-img`'s `background-image` between `hero_image.jpg` / `hero_image2.jpg` / `hero_image3.jpg`; 4 shows a looping muted `<video>` of `hero_video.mp4` instead. This is a temporary decision-making tool, not a feature — once a final hero background is chosen, remove the `.hero-test-nav` block from `index.html`, delete `js/hero-test.js` and its `<script>` tag, remove the `.hero-test-nav`/`.hero-bg-video` CSS rules, and hardcode the winning image (or swap `.hero-bg-img` for a `<video>`, if the video wins) directly.
 
 ## i18n architecture
 

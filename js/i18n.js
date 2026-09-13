@@ -5,7 +5,7 @@ const translations = {
     'hero.tag': 'Exploración · Ciencia · Comunidad',
     'hero.h1': 'Descubre un buceo <em>diferente</em> en la Ría de Vigo y las Islas Cíes',
     'hero.p': 'Un centro de buceo en el que obtener tu curso PADI, descubrir la vida marina y hacer que tus inmersiones sirvan para proteger los océanos.',
-    'hero.btn1': '¡Súmate a nosotros!',
+    'hero.btn1': '¡Bucea con nosotros!',
     'hero.btn2': 'Síguenos en redes',
 
     'act.label': '¿Qué ofrecemos?',
@@ -67,7 +67,7 @@ const translations = {
     'hero.tag': 'Exploración · Ciencia · Comunidade',
     'hero.h1': 'Descobre un mergullo <em>diferente</em> na Ría de Vigo e as Illas Cíes',
     'hero.p': 'Un centro de mergullo no que obter o teu curso PADI, descubrir a vida mariña e facer que as túas inmersións sirvan para protexer os océanos.',
-    'hero.btn1': 'Únete a nós!',
+    'hero.btn1': '¡Mergulla connosco!',
     'hero.btn2': 'Séguenos nas redes',
 
     'act.label': 'Que ofrecemos?',
@@ -129,7 +129,7 @@ const translations = {
     'hero.tag': 'Exploration · Science · Community',
     'hero.h1': 'Discover a <em>different</em> kind of diving in the Ría de Vigo and the Cíes Islands',
     'hero.p': 'A diving centre where you can get your PADI certification, discover marine life and make every dive count for the protection of our oceans.',
-    'hero.btn1': 'Join us!',
+    'hero.btn1': 'Dive with us!',
     'hero.btn2': 'Follow us on social media',
 
     'act.label': 'What do we offer?',

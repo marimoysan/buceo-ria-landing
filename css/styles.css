@@ -195,61 +195,10 @@ nav {
 .hero-bg-img {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/hero_image2.jpg');
+  background-image: url('../assets/images/hero_image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.hero-bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-.hero-bg-video.active {
-  display: block;
-}
-
-/* ─── HERO TEST NAV (temporal) ─── */
-.hero-test-nav {
-  position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  display: flex;
-  gap: 6px;
-  background: rgba(13, 27, 42, 0.75);
-  padding: 6px;
-  border-radius: 999px;
-  backdrop-filter: blur(4px);
-}
-
-.hero-test-nav button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.hero-test-nav button:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.hero-test-nav button.active {
-  background: #fff;
-  color: #0D1B2A;
 }
 
 .hero-bg-pattern {
