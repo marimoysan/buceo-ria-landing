@@ -48,7 +48,9 @@ form.btn.addEventListener('click', () => {
 });
 
 function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
+  const local = email.split('@')[0] || '';
+  return re.test(email) && !email.includes('..') && !local.startsWith('.') && !local.endsWith('.');
 }
 
 function setLoading(isLoading) {
