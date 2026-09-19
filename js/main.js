@@ -10,7 +10,7 @@ const form = {
   success:    document.getElementById('cta-success'),
 };
 
-form.btn.addEventListener('click', async () => {
+form.btn.addEventListener('click', () => {
   const nombre    = form.nombre.value.trim();
   const email     = form.email.value.trim();
   const intereses = Array.from(form.intereses).filter(c => c.checked).map(c => c.value);
@@ -24,38 +24,28 @@ form.btn.addEventListener('click', async () => {
     return;
   }
 
-  setLoading(true);
+  // no-cors: la respuesta no se puede leer igualmente, así que no esperamos
+  // a que vuelva la petición para confirmar — Apps Script tarda varios
+  // segundos en responder aunque la fila ya se haya guardado en la hoja.
+  fetch(SHEETS_WEBHOOK_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({
+      nombre,
+      email,
+      intereses,
+      newsletter: form.newsletter.checked,
+    }),
+  }).catch(err => console.error('Error enviando el formulario:', err));
 
-  try {
-    await fetch(SHEETS_WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({
-        nombre,
-        email,
-        intereses,
-        newsletter: form.newsletter.checked,
-      }),
-    });
-
-    resetForm();
-    form.fields.hidden = true;
-    form.success.hidden = false;
-  } catch {
-    showFeedback(t('form.error'), 'error');
-  } finally {
-    setLoading(false);
-  }
+  resetForm();
+  form.fields.hidden = true;
+  form.success.hidden = false;
 });
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function setLoading(isLoading) {
-  form.btn.disabled = isLoading;
-  form.btn.textContent = isLoading ? t('form.sending') : t('btn.submit');
 }
 
 function resetForm() {
