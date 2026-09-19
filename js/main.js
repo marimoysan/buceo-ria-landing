@@ -3,15 +3,15 @@ const WEBHOOK_URL = 'REEMPLAZA_CON_TU_URL_DE_MAKE';
 const form = {
   nombre:     document.querySelector('input[autocomplete="name"]'),
   email:      document.querySelector('input[autocomplete="email"]'),
-  mensaje:    document.querySelector('textarea'),
+  intereses:  document.querySelectorAll('.interest-check'),
   newsletter: document.getElementById('newsletter-check'),
   btn:        document.querySelector('.btn-submit'),
 };
 
 form.btn.addEventListener('click', async () => {
-  const nombre  = form.nombre.value.trim();
-  const email   = form.email.value.trim();
-  const mensaje = form.mensaje.value.trim();
+  const nombre    = form.nombre.value.trim();
+  const email     = form.email.value.trim();
+  const intereses = Array.from(form.intereses).filter(c => c.checked).map(c => c.value);
 
   if (!nombre || !email) {
     showFeedback(t('form.validation'), 'error');
@@ -31,7 +31,7 @@ form.btn.addEventListener('click', async () => {
       body: JSON.stringify({
         nombre,
         email,
-        mensaje,
+        intereses,
         newsletter: form.newsletter.checked,
       }),
     });
@@ -51,14 +51,15 @@ function isValidEmail(email) {
 
 function setLoading(isLoading) {
   form.btn.disabled = isLoading;
-  form.btn.textContent = isLoading ? 'Enviando…' : 'Quiero unirme al proyecto';
+  form.btn.textContent = isLoading ? t('form.sending') : t('btn.submit');
 }
 
 function resetForm() {
   form.nombre.value    = '';
   form.email.value     = '';
-  form.mensaje.value   = '';
+  form.intereses.forEach(c => { c.checked = false; });
   form.newsletter.checked = false;
+  updateInterestsSummary();
 }
 
 function showFeedback(message, type) {
@@ -83,4 +84,39 @@ function showFeedback(message, type) {
 
   if (type === 'success') return;
   setTimeout(() => el.remove(), 5000);
+}
+
+const tooltipBtn = document.querySelector('.info-tooltip');
+if (tooltipBtn) {
+  tooltipBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    tooltipBtn.classList.toggle('is-open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!tooltipBtn.contains(e.target)) tooltipBtn.classList.remove('is-open');
+  });
+}
+
+const interestsDropdown = document.querySelector('.interests-dropdown');
+const interestsSummary = document.querySelector('.interests-summary-text');
+
+function updateInterestsSummary() {
+  if (!interestsSummary) return;
+  const checked = Array.from(form.intereses).filter(c => c.checked);
+  if (checked.length === 0) {
+    interestsSummary.textContent = t('form.message');
+    interestsSummary.classList.remove('has-value');
+  } else {
+    interestsSummary.textContent = checked.map(c => c.nextElementSibling.textContent).join(', ');
+    interestsSummary.classList.add('has-value');
+  }
+}
+
+if (interestsDropdown) {
+  form.intereses.forEach(c => c.addEventListener('change', updateInterestsSummary));
+  document.addEventListener('click', (e) => {
+    if (interestsDropdown.open && !interestsDropdown.contains(e.target)) {
+      interestsDropdown.removeAttribute('open');
+    }
+  });
 }

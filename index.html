@@ -277,35 +277,88 @@
   <!-- CTA / FORMULARIO -->
   <section id="cta">
     <div class="cta-inner">
-      <div class="section-label" data-i18n="cta.label">Únete a la lista de espera</div>
-      <h2 class="section-title" data-i18n="cta.title">Sé de los primeros en bucear con nosotros</h2>
-      <p class="section-intro" data-i18n="cta.intro">Déjanos tus datos y te avisaremos en cuanto abramos. Sin spam, solo
-        lo que importa.</p>
+      <div class="section-label" data-i18n="cta.label">Comunidad fundadora</div>
+      <h2 class="section-title" data-i18n="cta.title">Forma parte del proyecto desde el principio</h2>
+      <p class="section-intro" data-i18n="cta.intro">Aún no hemos abierto, pero ya puedes ser parte de esto. Déjanos
+        tus datos y sé de los primeros en enterarte de todo.</p>
 
-      <div class="form-group">
-        <input type="text" data-i18n-placeholder="form.name" placeholder="Tu nombre" autocomplete="name">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" data-i18n-placeholder="form.name" placeholder="Tu nombre" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <input type="email" data-i18n-placeholder="form.email" placeholder="Tu email" autocomplete="email">
+        </div>
       </div>
       <div class="form-group">
-        <input type="email" data-i18n-placeholder="form.email" placeholder="Tu email" autocomplete="email">
-      </div>
-      <div class="form-group">
-        <textarea data-i18n-placeholder="form.message"
-          placeholder="¿Qué te interesa más? (Formación PADI, salidas en la Ría, ciencia ciudadana…)"></textarea>
+        <details class="interests-dropdown">
+          <summary class="interests-summary">
+            <span class="interests-summary-text" data-i18n="form.message">¿Qué te interesa más? (opcional)</span>
+            <svg class="interests-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="interests-panel">
+            <label class="interests-option">
+              <input type="checkbox" class="interest-check" value="padi">
+              <span data-i18n="form.interest.padi">Formación PADI</span>
+            </label>
+            <label class="interests-option">
+              <input type="checkbox" class="interest-check" value="recreativo">
+              <span data-i18n="form.interest.recreativo">Buceo recreativo</span>
+            </label>
+            <label class="interests-option">
+              <input type="checkbox" class="interest-check" value="viajes">
+              <span data-i18n="form.interest.viajes">Viajes de buceo</span>
+            </label>
+            <label class="interests-option">
+              <input type="checkbox" class="interest-check" value="ciencia">
+              <span data-i18n="form.interest.ciencia">Ciencia ciudadana</span>
+            </label>
+            <label class="interests-option">
+              <input type="checkbox" class="interest-check" value="comunidad">
+              <span data-i18n="form.interest.comunidad">Comunidad</span>
+            </label>
+          </div>
+        </details>
       </div>
 
       <div class="newsletter-box">
-        <label class="checkbox-label">
-          <input type="checkbox" id="newsletter-check">
-          <span data-i18n="newsletter.check">Sí, quiero suscribirme a la newsletter de Buceo Ría</span>
-        </label>
-        <p class="newsletter-note" data-i18n-html="newsletter.note">Enviamos un correo una vez al mes o cada dos meses
-          con contenido exclusivamente divulgativo: novedades sobre la vida marina de la Ría, artículos de interés y
-          noticias del proyecto. Sin contenido promocional. Puedes darte de baja en cualquier momento con un solo
-          clic.<br><br><strong>Si prefieres no suscribirte</strong>, solo te contactaremos cuando el centro abra para
-          que vengas a bucear.</p>
+        <div class="newsletter-head">
+          <span class="newsletter-icon" aria-hidden="true">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </span>
+          <div>
+            <p class="newsletter-heading" data-i18n="newsletter.heading">Sé parte de la divulgación desde ya</p>
+            <p class="newsletter-sub" data-i18n="newsletter.sub">No hace falta esperar a bucear: descubre la vida
+              marina de la Ría antes que nadie.</p>
+          </div>
+        </div>
+        <div class="newsletter-consent">
+          <label class="checkbox-label">
+            <input type="checkbox" id="newsletter-check">
+            <span data-i18n="newsletter.check">Quiero recibir el boletín y unirme a la comunidad</span>
+          </label>
+          <button type="button" class="info-tooltip" aria-describedby="newsletter-tooltip">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="11" x2="12" y2="16.5" />
+              <circle cx="12" cy="7.5" r="0.75" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="sr-only" data-i18n="newsletter.tooltip_label">Más información sobre el boletín</span>
+          </button>
+          <div class="tooltip-content" id="newsletter-tooltip" role="tooltip" data-i18n-html="newsletter.note">Un
+            correo al mes o cada dos, con contenido divulgativo sobre la vida marina de la Ría. Sin promociones.
+            Puedes darte de baja cuando quieras con un clic.<br><br><strong>Si prefieres no suscribirte</strong>, solo
+            te contactaremos cuando el centro abra.</div>
+        </div>
       </div>
 
-      <button class="btn-submit" type="button" data-i18n="btn.submit">Quiero unirme al proyecto</button>
+      <button class="btn-submit" type="button" data-i18n="btn.submit">Quiero formar parte</button>
 
       <p class="lopd-text" data-i18n-html="lopd">En cumplimiento del <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y
         la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, te informamos de que los datos facilitados serán tratados por
