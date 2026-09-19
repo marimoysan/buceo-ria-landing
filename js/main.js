@@ -39,13 +39,21 @@ form.btn.addEventListener('click', () => {
     }),
   }).catch(err => console.error('Error enviando el formulario:', err));
 
-  resetForm();
-  form.fields.hidden = true;
-  form.success.hidden = false;
+  setLoading(true);
+  setTimeout(() => {
+    resetForm();
+    form.fields.hidden = true;
+    form.success.hidden = false;
+  }, 900);
 });
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function setLoading(isLoading) {
+  form.btn.disabled = isLoading;
+  form.btn.textContent = isLoading ? t('form.sending') : t('btn.submit');
 }
 
 function resetForm() {
