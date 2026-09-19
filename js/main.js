@@ -6,6 +6,8 @@ const form = {
   intereses:  document.querySelectorAll('.interest-check'),
   newsletter: document.getElementById('newsletter-check'),
   btn:        document.querySelector('.btn-submit'),
+  fields:     document.getElementById('cta-form-fields'),
+  success:    document.getElementById('cta-success'),
 };
 
 form.btn.addEventListener('click', async () => {
@@ -37,8 +39,9 @@ form.btn.addEventListener('click', async () => {
       }),
     });
 
-    showFeedback(t('form.success'), 'success');
     resetForm();
+    form.fields.hidden = true;
+    form.success.hidden = false;
   } catch {
     showFeedback(t('form.error'), 'error');
   } finally {

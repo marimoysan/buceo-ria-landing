@@ -782,6 +782,30 @@ section {
   margin: 0 auto 2.5rem;
 }
 
+.cta-success {
+  padding: 2rem 1.5rem 1rem;
+}
+
+.cta-success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--fuchsia-pale);
+  color: var(--fuchsia);
+  margin-bottom: 1.25rem;
+}
+
+.cta-success-message {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
