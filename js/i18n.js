@@ -59,13 +59,13 @@ const translations = {
     'newsletter.tooltip_label': 'Más información sobre el boletín',
     'newsletter.note': 'Un correo al mes o cada dos, con contenido divulgativo sobre la vida marina de la Ría. Sin promociones. Puedes darte de baja cuando quieras con un clic.<br><br><strong>Si prefieres no suscribirte</strong>, solo te contactaremos cuando el centro abra.',
     'btn.submit': 'Quiero formar parte',
-    'lopd': 'En cumplimiento del <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, te informamos de que los datos facilitados serán tratados por <em>Buceo Ría de Vigo</em> con la finalidad de gestionar tu solicitud de incorporación a la lista de espera y, si lo consientes, el envío de la newsletter. No cederemos tus datos a terceros. Tienes derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:hola@buceoriavigo.com">hola@buceoriavigo.com</a>. Para más información consulta nuestro <a href="aviso-legal.html">Aviso Legal y Política de Privacidad</a>.',
+    'lopd': 'En cumplimiento del <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>, te informamos de que los datos facilitados serán tratados por <em>Buceo Ría de Vigo</em> con la finalidad de gestionar tu solicitud de incorporación a la lista de espera y, si lo consientes, el envío de la newsletter. No cederemos tus datos a terceros. Tienes derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Para más información consulta nuestro <a href="aviso-legal.html">Aviso Legal y Política de Privacidad</a>.',
 
     'footer.legal': 'Aviso legal',
 
     'form.sending': 'Enviando…',
     'form.success': '¡Apuntado! Te avisaremos cuando abramos. 🌊',
-    'form.error': 'Algo salió mal. Inténtalo de nuevo o escríbenos a hola@buceoriavigo.com',
+    'form.error': 'Algo salió mal. Inténtalo de nuevo o escríbenos a vigo@buceoriavigo.com',
     'form.validation': 'Por favor rellena tu nombre y email.',
     'form.email_invalid': 'El email no tiene un formato válido.',
   },
@@ -130,13 +130,13 @@ const translations = {
     'newsletter.tooltip_label': 'Máis información sobre o boletín',
     'newsletter.note': 'Un correo ao mes ou cada dous, con contido divulgativo sobre a vida mariña da Ría. Sen promocións. Podes darte de baixa cando queiras cun clic.<br><br><strong>Se prefires non subscribirte</strong>, só te contactaremos cando o centro abra.',
     'btn.submit': 'Quero formar parte',
-    'lopd': 'En cumprimento do <strong>Regulamento (UE) 2016/679 (RXPD)</strong> e a <strong>Lei Orgánica 3/2018 (LOPDGDD)</strong>, informámoste de que os datos facilitados serán tratados por <em>Buceo Ría de Vigo</em> coa finalidade de xestionar a túa solicitude de incorporación á lista de espera e, se o consintes, o envío da newsletter. Non cederemos os teus datos a terceiros. Tes dereito de acceso, rectificación, supresión, limitación, portabilidade e oposición escribindo a <a href="mailto:hola@buceoriavigo.com">hola@buceoriavigo.com</a>. Para máis información consulta o noso <a href="aviso-legal.html">Aviso Legal e Política de Privacidade</a>.',
+    'lopd': 'En cumprimento do <strong>Regulamento (UE) 2016/679 (RXPD)</strong> e a <strong>Lei Orgánica 3/2018 (LOPDGDD)</strong>, informámoste de que os datos facilitados serán tratados por <em>Buceo Ría de Vigo</em> coa finalidade de xestionar a túa solicitude de incorporación á lista de espera e, se o consintes, o envío da newsletter. Non cederemos os teus datos a terceiros. Tes dereito de acceso, rectificación, supresión, limitación, portabilidade e oposición escribindo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Para máis información consulta o noso <a href="aviso-legal.html">Aviso Legal e Política de Privacidade</a>.',
 
     'footer.legal': 'Aviso legal',
 
     'form.sending': 'Enviando…',
     'form.success': '¡Apuntado! Avisarémoste cando abramos. 🌊',
-    'form.error': 'Algo saíu mal. Inténtao de novo ou escríbenos a hola@buceoriavigo.com',
+    'form.error': 'Algo saíu mal. Inténtao de novo ou escríbenos a vigo@buceoriavigo.com',
     'form.validation': 'Por favor enche o teu nome e email.',
     'form.email_invalid': 'O email non ten un formato válido.',
   },
@@ -201,13 +201,13 @@ const translations = {
     'newsletter.tooltip_label': 'More information about the newsletter',
     'newsletter.note': "One email a month or every two months, with educational content about the marine life of the Ría. No promotions. Unsubscribe anytime with one click.<br><br><strong>If you'd rather not subscribe</strong>, we'll only contact you once the centre opens.",
     'btn.submit': 'I want to be part of it',
-    'lopd': 'In compliance with <strong>Regulation (EU) 2016/679 (GDPR)</strong> and <strong>Spanish Organic Law 3/2018 (LOPDGDD)</strong>, we inform you that the data provided will be processed by <em>Buceo Ría de Vigo</em> for the purpose of managing your waiting list request and, if you consent, sending the newsletter. We will not share your data with third parties. You have the right of access, rectification, erasure, restriction, portability and objection by writing to <a href="mailto:hola@buceoriavigo.com">hola@buceoriavigo.com</a>. For more information, see our <a href="aviso-legal.html">Legal Notice and Privacy Policy</a>.',
+    'lopd': 'In compliance with <strong>Regulation (EU) 2016/679 (GDPR)</strong> and <strong>Spanish Organic Law 3/2018 (LOPDGDD)</strong>, we inform you that the data provided will be processed by <em>Buceo Ría de Vigo</em> for the purpose of managing your waiting list request and, if you consent, sending the newsletter. We will not share your data with third parties. You have the right of access, rectification, erasure, restriction, portability and objection by writing to <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. For more information, see our <a href="aviso-legal.html">Legal Notice and Privacy Policy</a>.',
 
     'footer.legal': 'Legal notice',
 
     'form.sending': 'Sending…',
     'form.success': "Signed up! We'll let you know when we open. 🌊",
-    'form.error': 'Something went wrong. Try again or write to us at hola@buceoriavigo.com',
+    'form.error': 'Something went wrong. Try again or write to us at vigo@buceoriavigo.com',
     'form.validation': 'Please fill in your name and email.',
     'form.email_invalid': 'The email format is not valid.',
   },
