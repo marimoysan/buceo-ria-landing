@@ -8,3 +8,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Assets sin usar, conservados solo localmente (no forman parte de la web)
+assets/images/fondo-buceador.JPG
+assets/images/video-buceo.mp4
