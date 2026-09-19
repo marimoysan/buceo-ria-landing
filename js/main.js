@@ -1,4 +1,4 @@
-const WEBHOOK_URL = 'REEMPLAZA_CON_TU_URL_DE_MAKE';
+const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzk5KZQKpqJCniMjJ9x4oRYNTu_cXcnLB4qmAieVrhjKfBAdqzmVuJNJHAiP2EjPjbT/exec';
 
 const form = {
   nombre:     document.querySelector('input[autocomplete="name"]'),
@@ -25,9 +25,10 @@ form.btn.addEventListener('click', async () => {
   setLoading(true);
 
   try {
-    await fetch(WEBHOOK_URL, {
+    await fetch(SHEETS_WEBHOOK_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({
         nombre,
         email,
