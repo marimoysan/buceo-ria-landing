@@ -62,6 +62,13 @@ const translations = {
     'lopd': 'En cumplimiento del RGPD y la LOPDGDD, tus datos serán tratados por <em>Buceo Ría de Vigo</em> para gestionar tu solicitud de lista de espera y, si lo consientes, enviarte la newsletter. No los compartimos con terceros. Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Más información en nuestro <a href="aviso-legal.html">Aviso Legal y Política de Privacidad</a>.',
 
     'footer.legal': 'Aviso legal',
+    'footer.cookies': 'Configurar cookies',
+
+    'cookies.title': '¡Hola!',
+    'cookies.text': 'Para mejorar nuestra web y entender mejor a los buceadores que nos visitan, nos gustaría utilizar cookies de análisis, pero sólo si tú nos dejas. Puedes revocar este permiso en cualquier momento.',
+    'cookies.more': 'Más info',
+    'cookies.accept': '¡Claro!',
+    'cookies.reject': 'No, gracias',
 
     'form.sending': 'Enviando…',
     'form.success': '¡Apuntado! Te avisaremos cuando abramos. 🌊',
@@ -133,6 +140,13 @@ const translations = {
     'lopd': 'En cumprimento do RXPD e a LOPDGDD, os teus datos serán tratados por <em>Buceo Ría de Vigo</em> para xestionar a túa solicitude de lista de espera e, se o consintes, para enviarche a newsletter. Non os compartimos con terceiros. Podes exercer os teus dereitos de acceso, rectificación, supresión, limitación, portabilidade e oposición escribindo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Máis información no noso <a href="aviso-legal.html">Aviso Legal e Política de Privacidade</a>.',
 
     'footer.legal': 'Aviso legal',
+    'footer.cookies': 'Configurar cookies',
+
+    'cookies.title': 'Ola!',
+    'cookies.text': 'Para mellorar a nosa web e entender mellor aos mergulladores que nos visitan, gustaríanos utilizar cookies de análise, pero só se ti nos deixas. Podes revogar este permiso en calquera momento.',
+    'cookies.more': 'Máis info',
+    'cookies.accept': 'Claro!',
+    'cookies.reject': 'Non, grazas',
 
     'form.sending': 'Enviando…',
     'form.success': '¡Apuntado! Avisarémoste cando abramos. 🌊',
@@ -204,6 +218,13 @@ const translations = {
     'lopd': 'In line with the GDPR and Spanish data protection law (LOPDGDD), your data will be processed by <em>Buceo Ría de Vigo</em> to manage your waiting list request and, if you consent, to send you the newsletter. We never share it with third parties. You can exercise your rights of access, rectification, erasure, restriction, portability and objection by writing to <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. More information in our <a href="aviso-legal.html">Legal Notice and Privacy Policy</a>.',
 
     'footer.legal': 'Legal notice',
+    'footer.cookies': 'Cookie settings',
+
+    'cookies.title': 'Hi there!',
+    'cookies.text': "To improve our website and better understand the divers who visit us, we'd like to use analytics cookies, but only if you let us. You can withdraw this permission at any time.",
+    'cookies.more': 'Learn more',
+    'cookies.accept': 'Sure!',
+    'cookies.reject': 'No, thanks',
 
     'form.sending': 'Sending…',
     'form.success': "Signed up! We'll let you know when we open. 🌊",
