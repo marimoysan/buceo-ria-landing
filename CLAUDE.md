@@ -58,6 +58,10 @@ The `fetch()` call uses `mode: 'no-cors'` with a `text/plain` Content-Type (not 
 
 **If the webhook URL ever needs to change**, also confirm the `connect-src` directive in `vercel.json`'s CSP allows the domain the webhook actually lives on — currently `https://script.google.com https://script.googleusercontent.com` (the `/exec` URL 302-redirects to `script.googleusercontent.com` to serve the actual response, so both hosts are needed even though only `script.google.com` appears in the webhook URL itself). Otherwise the browser will silently block the `fetch()` call and the form will look broken with no console-visible cause beyond a CSP violation.
 
+## Vercel Web Analytics
+
+Both pages load `<script defer src="/_vercel/insights/script.js">` right after `nav.js`. This is Vercel's plain-HTML integration. The dashboard's "Get Started" wizard defaults to Next.js and suggests `npm i @vercel/analytics`, but that doesn't apply here (no npm, no build). It's cookieless and anonymous, so it loads unconditionally with no consent gate, and it counts every visitor, unlike GA4 which only sees people who accept cookies. The script is served same-origin by Vercel, so the CSP's `script-src 'self'` / `connect-src 'self'` already cover it. It only exists on Vercel deployments: it 404s locally, which is expected. Analytics must be enabled in the Vercel dashboard (project → Analytics) for data to show. `aviso-legal.html` section 3 mentions it under "Estadísticas de uso sin cookies".
+
 ## Deployment & security headers
 
 Deployed on Vercel (`https://buceo-ria-landing.vercel.app`, tracks the `main` branch) as a plain static site — no build step, so every file tracked in git is served as-is unless excluded.
