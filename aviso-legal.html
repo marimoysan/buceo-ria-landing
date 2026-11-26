@@ -137,6 +137,8 @@
       <li><strong>lang</strong> — Almacena la preferencia de idioma del usuario. Duración: persistente (localStorage). Finalidad: técnica.</li>
       <li><strong>cookieConsent</strong> — Almacena si el usuario ha aceptado o rechazado las cookies de análisis, para no volver a preguntar en cada visita. Duración: persistente (localStorage). Finalidad: técnica.</li>
     </ul>
+    <h3>Estadísticas de uso sin cookies</h3>
+    <p>Utilizamos <strong>Vercel Web Analytics</strong> (Vercel Inc.), el servicio de alojamiento de este sitio, para obtener estadísticas agregadas y anónimas de visitas (páginas vistas, procedencia de la visita, país y tipo de dispositivo). No instala cookies ni almacena datos en su navegador, y no permite identificar a los usuarios ni seguirlos entre sitios web.</p>
     <h3>Cookies de análisis de terceros (requieren consentimiento)</h3>
     <p>Utilizamos <strong>Google Analytics 4</strong>, un servicio de Google Ireland Limited, para obtener estadísticas agregadas sobre el uso del sitio (páginas visitadas, procedencia de las visitas, tipo de dispositivo) y así mejorarlo. Estas cookies no se instalan hasta que usted pulsa «Aceptar».</p>
     <ul>
@@ -202,5 +204,7 @@
 <script src="js/i18n.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/analytics.js"></script>
+<!-- Vercel Web Analytics: sin cookies, no requiere consentimiento. Solo funciona desplegado en Vercel (en local da 404, es normal) -->
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
