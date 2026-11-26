@@ -5,6 +5,13 @@
 // Depende de js/i18n.js (window.t + data-i18n), que debe cargarse antes.
 
 (function () {
+  // ─── INTERRUPTOR GENERAL ───
+  // false = GA desactivado: no se carga GA, no se muestra el banner y se oculta el enlace
+  // "Configurar cookies" del footer. A quien ya hubiera aceptado se le borran las cookies _ga.
+  // Para reactivarlo: ponerlo a true y restaurar el bloque comentado de GA en la sección 3
+  // de aviso-legal.html (ver CLAUDE.md, "Analytics & cookie consent").
+  const GA_ENABLED = false;
+
   const GA_ID = 'G-SM26JSXCMX';
   const STORAGE_KEY = 'cookieConsent';
   // Botón flotante (burbuja abajo a la derecha) para reabrir las preferencias.
@@ -158,6 +165,14 @@
       showBanner();
     });
   });
+
+  if (!GA_ENABLED) {
+    // Limpieza para visitantes que aceptaron mientras GA estuvo activo.
+    disableGA();
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* nada que limpiar */ }
+    document.querySelectorAll('[data-cookie-settings]').forEach(el => { el.hidden = true; });
+    return;
+  }
 
   const consent = getConsent();
   if (consent === 'granted') loadGA();
