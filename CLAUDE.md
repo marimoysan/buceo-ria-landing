@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single static landing page (pre-launch waitlist) for Buceo Ría, a diving center in the Ría de Vigo / Islas Cíes, Spain. No build step, no package manager, no framework — plain HTML/CSS/JS served as-is.
+A single static landing page (pre-launch waitlist) for Buceo Ría, a diving center in the Ría de Vigo / Islas Cíes, Spain. **The brand name is "Buceo Ría"** (at most "Buceo Ría - Vigo"), never "Buceo Ría de Vigo". That wrong form appeared in the legal notice, the LOPD form text and the footer © until 2026-11-28. "Ría de Vigo" on its own is a place name and is fine in copy (e.g. "Descubre la Ría de Vigo"). No build step, no package manager, no framework — plain HTML/CSS/JS served as-is.
 
 ## Running locally
 

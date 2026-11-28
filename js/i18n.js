@@ -59,7 +59,7 @@ const translations = {
     'newsletter.tooltip_label': 'Más información sobre el boletín',
     'newsletter.note': 'Un correo al mes o cada dos, con contenido divulgativo sobre la vida marina de la Ría. Sin promociones. Puedes darte de baja cuando quieras con un clic.<br><br><strong>Si prefieres no suscribirte</strong>, solo te contactaremos cuando el centro abra.',
     'btn.submit': 'Quiero formar parte',
-    'lopd': 'En cumplimiento del RGPD y la LOPDGDD, tus datos serán tratados por <em>Buceo Ría de Vigo</em> para gestionar tu solicitud de lista de espera y, si lo consientes, enviarte la newsletter. No los compartimos con terceros. Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Más información en nuestro <a href="aviso-legal.html">Aviso Legal y Política de Privacidad</a>.',
+    'lopd': 'En cumplimiento del RGPD y la LOPDGDD, tus datos serán tratados por <em>Buceo Ría</em> para gestionar tu solicitud de lista de espera y, si lo consientes, enviarte la newsletter. No los compartimos con terceros. Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Más información en nuestro <a href="aviso-legal.html">Aviso Legal y Política de Privacidad</a>.',
 
     'footer.legal': 'Aviso legal',
     'footer.cookies': 'Configurar cookies',
@@ -137,7 +137,7 @@ const translations = {
     'newsletter.tooltip_label': 'Máis información sobre o boletín',
     'newsletter.note': 'Un correo ao mes ou cada dous, con contido divulgativo sobre a vida mariña da Ría. Sen promocións. Podes darte de baixa cando queiras cun clic.<br><br><strong>Se prefires non subscribirte</strong>, só te contactaremos cando o centro abra.',
     'btn.submit': 'Quero formar parte',
-    'lopd': 'En cumprimento do RXPD e a LOPDGDD, os teus datos serán tratados por <em>Buceo Ría de Vigo</em> para xestionar a túa solicitude de lista de espera e, se o consintes, para enviarche a newsletter. Non os compartimos con terceiros. Podes exercer os teus dereitos de acceso, rectificación, supresión, limitación, portabilidade e oposición escribindo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Máis información no noso <a href="aviso-legal.html">Aviso Legal e Política de Privacidade</a>.',
+    'lopd': 'En cumprimento do RXPD e a LOPDGDD, os teus datos serán tratados por <em>Buceo Ría</em> para xestionar a túa solicitude de lista de espera e, se o consintes, para enviarche a newsletter. Non os compartimos con terceiros. Podes exercer os teus dereitos de acceso, rectificación, supresión, limitación, portabilidade e oposición escribindo a <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. Máis información no noso <a href="aviso-legal.html">Aviso Legal e Política de Privacidade</a>.',
 
     'footer.legal': 'Aviso legal',
     'footer.cookies': 'Configurar cookies',
@@ -215,7 +215,7 @@ const translations = {
     'newsletter.tooltip_label': 'More information about the newsletter',
     'newsletter.note': "One email a month or every two months, with educational content about the marine life of the Ría. No promotions. Unsubscribe anytime with one click.<br><br><strong>If you'd rather not subscribe</strong>, we'll only contact you once the centre opens.",
     'btn.submit': 'I want to be part of it',
-    'lopd': 'In line with the GDPR and Spanish data protection law (LOPDGDD), your data will be processed by <em>Buceo Ría de Vigo</em> to manage your waiting list request and, if you consent, to send you the newsletter. We never share it with third parties. You can exercise your rights of access, rectification, erasure, restriction, portability and objection by writing to <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. More information in our <a href="aviso-legal.html">Legal Notice and Privacy Policy</a>.',
+    'lopd': 'In line with the GDPR and Spanish data protection law (LOPDGDD), your data will be processed by <em>Buceo Ría</em> to manage your waiting list request and, if you consent, to send you the newsletter. We never share it with third parties. You can exercise your rights of access, rectification, erasure, restriction, portability and objection by writing to <a href="mailto:vigo@buceoriavigo.com">vigo@buceoriavigo.com</a>. More information in our <a href="aviso-legal.html">Legal Notice and Privacy Policy</a>.',
 
     'footer.legal': 'Legal notice',
     'footer.cookies': 'Cookie settings',
